@@ -44,6 +44,7 @@ Cгенерировать топологию, которая соответст�
 
 # эти заготовки написаны чтобы показать в какой момент должна
 # рисоваться топология (после вызова функции)
+from draw_network_graph import draw_topology
 from task_11_1 import parse_cdp_neighbors
 def create_network_map(filenames):
     work_dictionary = {}
@@ -69,5 +70,6 @@ if __name__ == "__main__":
     ]
 
 topology = create_network_map(infiles)
+draw_topology(topology)
 
 
