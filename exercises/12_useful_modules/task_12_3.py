@@ -23,16 +23,8 @@ Reachable    Unreachable
 
 Для этого задания нет тестов
 """
+from tabulate import tabulate
 def print_ip_table(Reachable, Unreachable):
-    table = '{:11}   {:11}'
-    print(table.format('Reachable', 'Unreachable'))
-    print(table.format('-'* 11, '-'* 11))
-    for ip in range(max(len(Reachable), len(Unreachable))):
-        print(table.format(list_item(Reachable,ip), list_item(Unreachable,ip)))
-
-def list_item(list,index):
-    if index >=len(list):
-        return ''
-    else:
-        return list[index]
+    print(tabulate({'Reachable': Reachable,
+                    'Unreachable': Unreachable}, headers ='keys'))
 print_ip_table(['10.1.1.1','10.1.1.2'],['10.1.1.7', '10.1.1.8', '10.1.1.9'])
